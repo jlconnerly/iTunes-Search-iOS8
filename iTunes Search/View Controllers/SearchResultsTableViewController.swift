@@ -26,7 +26,6 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
     }
     
     //
@@ -50,9 +49,9 @@ class SearchResultsTableViewController: UITableViewController {
     
     //
     //MARK: - IBActions & Methods
+    //
     
     private func performSearch() {
-        
         guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
         
@@ -76,6 +75,17 @@ class SearchResultsTableViewController: UITableViewController {
     
     @IBAction func searchGroupSegmentedControlDidChange(_ sender: UISegmentedControl) {
         performSearch()
+    }
+    
+    //
+    //MARK: - Navigation
+    //
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController,
+              let indexPath = tableView.indexPathForSelectedRow else { return }
+        let result = searchResultsController.searchResults[indexPath.row]
+        detailVC.searchResult = result
     }
 }
 

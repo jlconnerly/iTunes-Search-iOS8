@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,6 +74,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Dwu-n8-fue" kind="presentation" id="Dsx-VM-sLL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,6 +94,80 @@
                 <exit id="jph-A8-qc2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="884.05797101449286" y="117.85714285714285"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="G0R-xl-AXU">
+            <objects>
+                <viewController id="Dwu-n8-fue" customClass="DetailViewController" customModule="iTunes_Search" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqX-bg-S1j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6o-kx-o4R">
+                                <rect key="frame" x="57" y="94" width="300" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nJr-3x-GyQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="nJr-3x-GyQ" secondAttribute="height" multiplier="1:1" id="3Wp-oY-AR7"/>
+                                            <constraint firstAttribute="width" constant="300" id="5wC-I4-EDX"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nJr-3x-GyQ" firstAttribute="leading" secondItem="j6o-kx-o4R" secondAttribute="leading" id="QE5-yJ-OEg"/>
+                                    <constraint firstItem="nJr-3x-GyQ" firstAttribute="top" secondItem="j6o-kx-o4R" secondAttribute="top" id="Vhy-J5-gzr"/>
+                                    <constraint firstAttribute="height" constant="300" id="fzB-lf-Eus"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="clG-Kd-pY5">
+                                <rect key="frame" x="20" y="438" width="374" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snK-JR-KGz">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Artist Name - Album Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4se-KK-9Zn">
+                                        <rect key="frame" x="0.0" y="62" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5i-aB-kpg">
+                                <rect key="frame" x="348" y="44" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="Dwu-n8-fue" eventType="touchUpInside" id="cUj-fp-WdW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ofu-hd-9D6" firstAttribute="bottom" secondItem="clG-Kd-pY5" secondAttribute="bottom" constant="338" id="6TS-4r-U7Q"/>
+                            <constraint firstItem="j6o-kx-o4R" firstAttribute="leading" secondItem="ofu-hd-9D6" secondAttribute="leading" constant="57" id="PKX-Wh-fvZ"/>
+                            <constraint firstItem="ofu-hd-9D6" firstAttribute="trailing" secondItem="j6o-kx-o4R" secondAttribute="trailing" constant="57" id="TYK-dk-919"/>
+                            <constraint firstItem="clG-Kd-pY5" firstAttribute="leading" secondItem="ofu-hd-9D6" secondAttribute="leading" constant="20" id="WwN-Uz-vRM"/>
+                            <constraint firstItem="j6o-kx-o4R" firstAttribute="top" secondItem="ofu-hd-9D6" secondAttribute="top" constant="50" id="XZ8-7W-oyj"/>
+                            <constraint firstItem="ofu-hd-9D6" firstAttribute="trailing" secondItem="clG-Kd-pY5" secondAttribute="trailing" constant="20" id="vS3-vQ-EEp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ofu-hd-9D6"/>
+                    </view>
+                    <connections>
+                        <outlet property="artistDetailLabel" destination="4se-KK-9Zn" id="S28-Rd-9nH"/>
+                        <outlet property="imageView" destination="nJr-3x-GyQ" id="kf9-rc-RNA"/>
+                        <outlet property="trackNameLabel" destination="snK-JR-KGz" id="pZi-1f-QyN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mPd-50-eEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.7681159420292" y="117.85714285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hGW-A4-sgs">
