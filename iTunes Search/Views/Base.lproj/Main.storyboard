@@ -30,6 +30,7 @@
                                     </segments>
                                     <connections>
                                         <action selector="searchGroupSegmentedControl:" destination="jph-A8-qc2" eventType="valueChanged" id="qLc-vg-qGi"/>
+                                        <action selector="searchGroupSegmentedControlDidChange:" destination="wwy-0K-j5a" eventType="valueChanged" id="Kln-jh-mtl"/>
                                     </connections>
                                 </segmentedControl>
                                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="FTR-dG-FXW">

@@ -17,49 +17,45 @@ class SearchResultsTableViewController: UITableViewController {
     @IBOutlet weak var searchGroupSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     let searchResultsController = SearchresultController()
-
-   
+    
+    //
+    //MARK: - View LifeCycle
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
     }
-
+    
+    //
     // MARK: - Table view data source
-
+    //
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultsController.searchResults.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath)
-
+        
         let searchResult = searchResultsController.searchResults[indexPath.row]
         
         cell.textLabel?.text = searchResult.title
         cell.detailTextLabel?.text = searchResult.creator
         
-
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-extension SearchResultsTableViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    //
+    //MARK: - IBActions & Methods
+    
+    private func performSearch() {
+        
         guard let searchTerm = searchBar.text else { return }
         var resultType: ResultType!
+        
         switch searchGroupSegmentedControl.selectedSegmentIndex {
         case 0:
             resultType = .software
@@ -70,10 +66,25 @@ extension SearchResultsTableViewController: UISearchBarDelegate {
         default:
             resultType = .software
         }
+        
         searchResultsController.performSearch(with: searchTerm, resultType: resultType) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction func searchGroupSegmentedControlDidChange(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+}
+
+//
+//MARK: - Extensions
+//
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performSearch()
     }
 }
