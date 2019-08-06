@@ -15,8 +15,8 @@ struct SearchResults: Codable {
 struct SearchResult: Codable {
     
     enum CodingKeys: String, CodingKey {
-        case title = "artistName"
-        case creator = "trackName"
+        case title = "trackName"
+        case creator = "artistName"
     }
     
     var title: String

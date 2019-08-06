@@ -14,6 +14,7 @@
 		32BCF55222FA184400E760D9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55122FA184400E760D9 /* SearchResult.swift */; };
 		32BCF55722FA19EE00E760D9 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55622FA19EE00E760D9 /* ResultType.swift */; };
 		32BCF55922FA1A3500E760D9 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55822FA1A3500E760D9 /* SearchResultController.swift */; };
+		32BCF55C22FA218900E760D9 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55B22FA218900E760D9 /* SearchResultsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		32BCF55122FA184400E760D9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		32BCF55622FA19EE00E760D9 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		32BCF55822FA1A3500E760D9 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
+		32BCF55B22FA218900E760D9 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				32BCF55522FA19D800E760D9 /* Models */,
 				32BCF55322FA19BE00E760D9 /* Views */,
+				32BCF55D22FA218D00E760D9 /* View Controllers */,
 				32BCF55422FA19C700E760D9 /* Resources */,
 				32BCF55A22FA1A3800E760D9 /* Controllers */,
 			);
@@ -100,6 +103,14 @@
 				32BCF55822FA1A3500E760D9 /* SearchResultController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		32BCF55D22FA218D00E760D9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF55B22FA218900E760D9 /* SearchResultsTableViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			files = (
 				32BCF55922FA1A3500E760D9 /* SearchResultController.swift in Sources */,
 				32BCF55222FA184400E760D9 /* SearchResult.swift in Sources */,
+				32BCF55C22FA218900E760D9 /* SearchResultsTableViewController.swift in Sources */,
 				32BCF55722FA19EE00E760D9 /* ResultType.swift in Sources */,
 				32BCF54022FA168C00E760D9 /* AppDelegate.swift in Sources */,
 			);
