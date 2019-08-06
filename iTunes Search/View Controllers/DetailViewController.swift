@@ -9,6 +9,10 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    //
+    //MARK: - IBOutlets & Properties
+    //
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var trackNameLabel: UILabel!
@@ -16,10 +20,18 @@ class DetailViewController: UIViewController {
     
     var searchResult: SearchResult? 
     
+    //
+    //MARK: - View LifeCycle
+    //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
     }
+
+    //
+    //MARK: - IBActions & Methods
+    //
     
     private func updateViews() {
         guard let searchResult = searchResult else { return }
@@ -28,10 +40,10 @@ class DetailViewController: UIViewController {
         let data = try? Data(contentsOf: imageURL)
         
         guard let imageData = data,
-              let image = UIImage(data: imageData),
-              let imageView = imageView else { return }
-    
-        imageView.image       = image
+            let image = UIImage(data: imageData),
+            let imageView = imageView else { return }
+        
+        imageView.image        = image
         trackNameLabel.text    = searchResult.title
         artistDetailLabel.text = "\(searchResult.creator) - \(searchResult.album)"
     }
@@ -39,5 +51,7 @@ class DetailViewController: UIViewController {
     @IBAction func doneButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
+
+
+

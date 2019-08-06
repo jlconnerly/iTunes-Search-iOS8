@@ -82,7 +82,7 @@ class SearchResultsTableViewController: UITableViewController {
     //
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? DetailViewController,
+        guard let detailVC  = segue.destination as? DetailViewController,
               let indexPath = tableView.indexPathForSelectedRow else { return }
         let result = searchResultsController.searchResults[indexPath.row]
         detailVC.searchResult = result
