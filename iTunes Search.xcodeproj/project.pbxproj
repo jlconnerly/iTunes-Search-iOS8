@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		32BCF54022FA168C00E760D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF53F22FA168C00E760D9 /* AppDelegate.swift */; };
-		32BCF54222FA168C00E760D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF54122FA168C00E760D9 /* ViewController.swift */; };
 		32BCF54522FA168C00E760D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BCF54322FA168C00E760D9 /* Main.storyboard */; };
 		32BCF54722FA168C00E760D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32BCF54622FA168C00E760D9 /* Assets.xcassets */; };
 		32BCF54A22FA168C00E760D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32BCF54822FA168C00E760D9 /* LaunchScreen.storyboard */; };
+		32BCF55222FA184400E760D9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55122FA184400E760D9 /* SearchResult.swift */; };
+		32BCF55722FA19EE00E760D9 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55622FA19EE00E760D9 /* ResultType.swift */; };
+		32BCF55922FA1A3500E760D9 /* SearchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCF55822FA1A3500E760D9 /* SearchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32BCF53C22FA168C00E760D9 /* iTunes Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32BCF53F22FA168C00E760D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32BCF54122FA168C00E760D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32BCF54422FA168C00E760D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32BCF54622FA168C00E760D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32BCF54922FA168C00E760D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32BCF54B22FA168C00E760D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32BCF55122FA184400E760D9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		32BCF55622FA19EE00E760D9 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
+		32BCF55822FA1A3500E760D9 /* SearchResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,48 @@
 		32BCF53E22FA168C00E760D9 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
-				32BCF53F22FA168C00E760D9 /* AppDelegate.swift */,
-				32BCF54122FA168C00E760D9 /* ViewController.swift */,
-				32BCF54322FA168C00E760D9 /* Main.storyboard */,
-				32BCF54622FA168C00E760D9 /* Assets.xcassets */,
-				32BCF54822FA168C00E760D9 /* LaunchScreen.storyboard */,
-				32BCF54B22FA168C00E760D9 /* Info.plist */,
+				32BCF55522FA19D800E760D9 /* Models */,
+				32BCF55322FA19BE00E760D9 /* Views */,
+				32BCF55422FA19C700E760D9 /* Resources */,
+				32BCF55A22FA1A3800E760D9 /* Controllers */,
 			);
 			path = "iTunes Search";
+			sourceTree = "<group>";
+		};
+		32BCF55322FA19BE00E760D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF54322FA168C00E760D9 /* Main.storyboard */,
+				32BCF54822FA168C00E760D9 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32BCF55422FA19C700E760D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF53F22FA168C00E760D9 /* AppDelegate.swift */,
+				32BCF54622FA168C00E760D9 /* Assets.xcassets */,
+				32BCF54B22FA168C00E760D9 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		32BCF55522FA19D800E760D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF55122FA184400E760D9 /* SearchResult.swift */,
+				32BCF55622FA19EE00E760D9 /* ResultType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32BCF55A22FA1A3800E760D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32BCF55822FA1A3500E760D9 /* SearchResultController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32BCF54222FA168C00E760D9 /* ViewController.swift in Sources */,
+				32BCF55922FA1A3500E760D9 /* SearchResultController.swift in Sources */,
+				32BCF55222FA184400E760D9 /* SearchResult.swift in Sources */,
+				32BCF55722FA19EE00E760D9 /* ResultType.swift in Sources */,
 				32BCF54022FA168C00E760D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
-				INFOPLIST_FILE = "iTunes Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Search/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
